@@ -28,8 +28,8 @@ namespace Exercise49
 
                 Square square = new Square();
 
-                double sumOfAreas = 0;
-                double sumOfPerimeters = 0;
+                double sumOfAreas = 0d;
+                double sumOfPerimeters = 0d;
                 for (int i = 0; i < squaresList.Count; i++)
                 {
                     sumOfAreas = sumOfAreas + square.AreaOfSquare(squaresList[i]);
