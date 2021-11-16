@@ -7,7 +7,6 @@ namespace Exercise50
     {
         /*
         * Exercise 50
-        * 
         * Description:
         * Create a list of triangles.
         * Use the Triangle class.
