@@ -17,7 +17,7 @@ namespace Exercise36
             Console.Title = "Exercise 36";
 
             string userInput = "";
-            bool isQuitting = false;
+            string isSinging = "";
             int[] songNumbers = new int[5] { 12, 11, 10, 9, 8 };
             string[] songWords = new string[5] { "Drummers Drumming", "Pipers Piping", "Lords a-Leaping", "Ladies Dancing", "Maids a-Milking" };
 
@@ -25,35 +25,45 @@ namespace Exercise36
             {
                 Console.Write("Enter a command (sing/quit): ");
                 userInput = Console.ReadLine();
-                bool isSinging = DetermineIfSinging(userInput);
-                isQuitting = DetermineIfQuitting(userInput);
-                if (isSinging == true)
+                isSinging = DetermineIfSinging(userInput);
+                // isQuitting = DetermineIfQuitting(userInput);
+                if (isSinging == "sing")
                 {
                     for (int i = 0; i < songNumbers.Length; i++)
                     {
                         Console.WriteLine($"{songNumbers[i]} {songWords[i]}");
                     }
                 }
-            } while (isQuitting == false);
+                else if (isSinging == "quit")
+                {
+                    Console.WriteLine("Goodbye!");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine(isSinging);
+                }
+            } while (isSinging != "quit");
 
-            if (isQuitting == true)
-            {
-                Console.WriteLine("Goodbye!");
-            }
+            
 
             Console.ReadKey();
         }
 
         // Determine if the user wants to sing
-        static bool DetermineIfSinging(string userInput)
+        static string DetermineIfSinging(string userInput)
         {
             if (userInput.ToLower().Trim() == "sing")
             {
-                return true;
+                return "sing";
+            }
+            else if (userInput.ToLower().Trim() == "quit")
+            {
+                return "quit";
             }
             else
             {
-                return false;
+                return "Please enter either 'sing' or 'quit'.";
             }
         }
 
