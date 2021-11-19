@@ -25,7 +25,7 @@ namespace Exercise35
             do // Loop through the application logic if the user wants to enter indices again
             {
                 // Create an array of size 5 and fill it with the following strings: "cow", "elephant", "jaguar", "horse", "crow"
-                string[] animalArray = new string[5] { "cow", "elephant", "jaguar", "horse", "crow" };
+                string[] animalArray = new string[] { "cow", "elephant", "jaguar", "horse", "crow" };
 
                 try
                 {
