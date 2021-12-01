@@ -19,8 +19,6 @@ namespace Exercise35
 
             string userInput = "";
             bool enterAgain = false;
-            int usersFirstChosenIndex = -1;
-            int usersSecondChosenIndex = -1;
 
             do // Loop through the application logic if the user wants to enter indices again
             {
@@ -29,10 +27,10 @@ namespace Exercise35
 
                 try
                 {
-                    int[] arrayOfIndices = GetUsersTwoChosenIndices(userInput, usersFirstChosenIndex, usersSecondChosenIndex);
+                    int[] arrayOfIndices = GetUsersTwoChosenIndices(userInput);
                     // Set the users chosen indices to variables
-                    usersFirstChosenIndex = arrayOfIndices[0];
-                    usersSecondChosenIndex = arrayOfIndices[1];
+                    int usersFirstChosenIndex = arrayOfIndices[0];
+                    int usersSecondChosenIndex = arrayOfIndices[1];
 
                     // Create two sentences
                     string sentenceOne = $"The value at index {usersFirstChosenIndex} is {animalArray[usersFirstChosenIndex]}.";
@@ -78,7 +76,7 @@ namespace Exercise35
         }
 
         // Get the users two entered indices separated by a space
-        public static int[] GetUsersTwoChosenIndices (string userInput, int usersFirstChosenIndex, int usersSecondChosenIndex)
+        public static int[] GetUsersTwoChosenIndices (string userInput)
         {
             Console.Write("Enter two indices: ");
             userInput = Console.ReadLine();
