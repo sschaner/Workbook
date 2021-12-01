@@ -36,7 +36,7 @@ namespace Exercise46
                 // Check if the given sides will create a triangle
                 if (double.IsNaN(triangle.CalculateArea(side1Length, side2Length, side3Length)) == true)
                 {
-                    Console.WriteLine("Your chosen side lengths cannot make a triangle. Please try again.");
+                    Console.WriteLine("Your chosen side lengths do not form a triangle. Please try again.");
                     goto TriangleStart;
                 }
                 else
